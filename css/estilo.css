@@ -1,0 +1,13 @@
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Lobster Two', cursive;
+}
+
+header {
+    display: flex;
+}
+
+section > article {
+    display: grid;
+}
