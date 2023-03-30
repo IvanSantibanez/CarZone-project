@@ -69,7 +69,7 @@ body {
     width: 15.625rem;
     height: 24.375rem;
     padding: 10px;
-    border: 1px solid black;
+    
 
 }
 
@@ -126,6 +126,25 @@ body {
 #galeria-autos h2 {
     align-self: start;
 }
+
+/* Footer */
+
+#pie-de-pagina {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    border-top: 1px solid black;
+    
+   
+}
+
+#pie-de-pagina li {
+    display: inline-block;
+    padding: 0 50px;
+    color: #093867;
+}
+
 
 
 
