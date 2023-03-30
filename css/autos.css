@@ -1,0 +1,44 @@
+#auto-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#texto-auto {
+    width: 85%;
+}
+
+#tabla-especificacion, #tabla-especificacion th, #tabla-especificacion td {
+    border: 1px solid black;
+      border-collapse: collapse;
+      padding: 10px 100px;
+      
+}
+
+#imagenes-autos {
+
+    border: 2px solid black;
+    margin-top: 20px;
+    display: flex;
+}
+
+#imagenes-autos  img{
+    width: 60vh;
+    height: auto;
+}
+
+#pie-de-pagina {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    border-top: 1px solid black;
+    
+   
+}
+
+#pie-de-pagina li {
+    display: inline-block;
+    padding: 0 50px;
+}
