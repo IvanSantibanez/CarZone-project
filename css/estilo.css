@@ -58,7 +58,75 @@ body {
 }
 
 
-section > article {
-    display: grid;
+
+
+
+/* Galeria autos */
+
+
+.automovil {
+
+    width: 15.625rem;
+    height: 24.375rem;
+    padding: 10px;
+    border: 1px solid black;
+
 }
+
+.automovil > article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    
+    
+   
+    
+}
+
+
+.imagen-autos {
+    width: 16.625rem;
+    height: auto;
+}
+
+.automovil article h3,strong,p{
+
+    margin: 3px;
+}
+
+
+
+
+.boton-galeria {
+    background-color: #093867;
+    border: 2px solid #B5C1D2;
+    color: #fafafa;
+    border-radius: 40px;
+    font-size: 15px;
+    padding: 10px;
+    margin: 20px;
+
+    
+  
+    
+  
+}
+
+#galeria-autos {
+    display: grid;
+    margin-left: 4rem;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fill,minmax(min(100%,20rem),1fr));
+    align-items: start;
+    
+}
+
+#galeria-autos h2 {
+    align-self: start;
+}
+
+
+
 
