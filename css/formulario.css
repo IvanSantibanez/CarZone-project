@@ -1,0 +1,44 @@
+form {
+    padding: 1%;
+}
+
+form label {
+    display: inline-block;
+    text-align: left;
+    width: 30%;
+    margin-bottom: 1vw;
+}
+
+form fieldset {
+    border: white;
+}
+
+form input, textarea, select {
+    display: inline-block;
+    width: 50%;
+    margin-bottom: 1vw;
+}
+
+form fieldset input {
+    display: inline;
+    justify-content: flex-start;
+    width: 19.6666666666666%;
+    margin-bottom: 1vw;
+}
+
+input, textarea, select {
+    border-radius: 5px;
+}
+
+#enviar {
+    display: center;
+    border-radius: 5px;;
+    background-color: rgb(71, 165, 247);
+    border: 1.15vw solid rgb(71, 165, 247);
+    color: white;
+}
+
+body {
+    font-family: 'Lobster Two', cursive;
+    padding: 10%;
+}
