@@ -28,9 +28,30 @@ document.addEventListener('DOMContentLoaded', function () {
     inputEmail.addEventListener('blur', validar)
     inputTelefono.addEventListener('blur', validar)
     inputRut.addEventListener('blur', validar)
-    inputMotivo.addEventListener('blur', validar)
+    inputMotivo.addEventListener('input', validar)
+    formulario.addEventListener('submit', enviarEmail)
+
+    function enviarEmail(e) {
+        e.preventDefault()
+
+        resetFormulario()
+        // Crear alerta
+        const alertaExito = document.createElement('P')
+        alertaExito.textContent = 'Mensaje enviado correctamente'
+        alertaExito.style.backgroundColor = 'green'
+        alertaExito.style.color = 'white'
+        alertaExito.style.textAlign = 'center'
+        alertaExito.style.width = '50%'
+        alertaExito.style.borderRadius = '10px'
 
 
+        formulario.appendChild(alertaExito)
+
+        setTimeout(()=> {
+            alertaExito.remove()
+        },3000)
+
+    }
 
     function validar(e) {
         console.log(e.target.parentElement)
@@ -40,8 +61,22 @@ document.addEventListener('DOMContentLoaded', function () {
             comprobarForm()
             return
         }
+        
         if (e.target.id === 'mail' && !validarEmail(e.target.value)) {
             mostrarAlerta('El email no es válido', e.target.parentElement)
+            form[e.target.name] = ''
+            comprobarForm()
+            return
+        }
+        if (e.target.id === 'rut' && !validarRut(e.target.value)) {
+            mostrarAlerta('El rut no es válido', e.target.parentElement)
+            form[e.target.name] = ''
+            comprobarForm()
+            return
+        }
+
+        if (e.target.id === 'telefono' && !validarTelefono(e.target.value)) {
+            mostrarAlerta('El número no es válido', e.target.parentElement)
             form[e.target.name] = ''
             comprobarForm()
             return
@@ -68,7 +103,8 @@ document.addEventListener('DOMContentLoaded', function () {
         error.style.backgroundColor = 'red'
         error.style.color = 'white'
         error.style.textAlign = 'center'
-        error.style.width = '30rem'
+        error.style.width = '50%'
+        error.style.borderRadius = '10px'
         error.classList.add('alerta')
 
 
@@ -90,17 +126,45 @@ document.addEventListener('DOMContentLoaded', function () {
         return resultado
     }
 
+    function validarRut(rut) {
+        const regex = /^[0-9]+[-|‐]{1}[0-9kK]{1}$/
+        const resultado = regex.test(rut)
+        return resultado
+    }
+
+    function validarTelefono(telefono) {
+        const regex = /^(\+?56)?(\s?)(0?9)(\s?)[98765432]\d{7}$/
+        const resultado = regex.test(telefono)
+        return resultado
+    }
+
+    //Comprobamos que todos los campos esten ingresados
     function comprobarForm() {
+        //si no están todos ingresados, el botón no estará disponible
         if (Object.values(form).includes('')) {
             botonEnviar.disabled = true
             botonEnviar.style.opacity = '60%'
+            botonEnviar.style.cursor = 'not-allowed'
             return
 
         }
         botonEnviar.disabled = false
         botonEnviar.style.opacity = '100%'
-
-
+        botonEnviar.style.cursor = 'pointer'
 
     }
+
+    function resetFormulario() {
+        form.nombre = ''
+        form.apellidoPaterno = ''
+        form.apellidoMaterno = ''
+        form.mail = ''
+        form.telefono = ''
+        form.rut = ''
+        form.motivo = ''
+
+        formulario.reset()
+        comprobarForm()
+    }
+
 })

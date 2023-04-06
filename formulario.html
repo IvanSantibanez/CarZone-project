@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./css/formulario.css" />
+    <link rel="stylesheet" href="./css/estilo.css">
     <script src="./formulario.js" defer></script>
     
 </head>
@@ -14,7 +15,21 @@
 <!-- Formulario de interés del usuario -->
 
 <body>
-
+    <header>
+        <nav id="navbar">
+            <img src="./assets/logo.png"  alt="Imagen logo de automóvil" id="navbar-logo">
+            <ul class="navbar-navegacion">
+                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="#">Prueba Manejo</a></li>
+                <li><a href="./formulario.html">Contacto</a></li>
+            </ul>
+            <ul class="navbar-navegacion">
+                <li><a href="#">Iniciar sesión</a></li>
+                <li><a href="#">Registrarse</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
     <form id="formulario">
 
         <fieldset class="nombre">
@@ -29,8 +44,7 @@
         </div> 
         <div>   
         <label for="telefono">Teléfono:</label>
-        <input type="text" id="telefono" name="telefono" placeholder="+56987654321"
-            pattern="^\+56(\s?)(0?9)(\s?)[9876543]\d{7}$" /><br />
+        <input type="text" id="telefono" name="telefono" placeholder="56987654321"/><br />
         </div>
         <div>    
         <label for="rut">Rut:</label>
@@ -45,6 +59,7 @@
 
         <br />
     </form>
+</main>
 
 </body>
 
