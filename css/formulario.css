@@ -1,9 +1,19 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+}
+
 form {
     padding: 1%;
+    border: 1px solid black;
+    
 }
 
 form label {
-    display: inline-block;
+    display: flex;
     text-align: left;
     width: 30%;
     margin-bottom: 1vw;
@@ -11,12 +21,15 @@ form label {
 
 form fieldset {
     border: white;
+    padding: 0;
+    margin: 0
 }
 
 form input, textarea, select {
     display: inline-block;
     width: 50%;
     margin-bottom: 1vw;
+    
 }
 
 form fieldset input {
@@ -24,6 +37,7 @@ form fieldset input {
     justify-content: flex-start;
     width: 19.6666666666666%;
     margin-bottom: 1vw;
+
 }
 
 input, textarea, select {
@@ -36,6 +50,8 @@ input, textarea, select {
     background-color: rgb(71, 165, 247);
     border: 1.15vw solid rgb(71, 165, 247);
     color: white;
+    opacity: 60%;
+    
 }
 
 body {

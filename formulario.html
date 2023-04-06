@@ -7,36 +7,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./css/formulario.css" />
+    <link rel="stylesheet" href="./css/estilo.css">
+    <script src="./formulario.js" defer></script>
+    
 </head>
 
 <!-- Formulario de interés del usuario -->
 
 <body>
-
-    <form>
+    <header>
+        <nav id="navbar">
+            <img src="./assets/logo.png"  alt="Imagen logo de automóvil" id="navbar-logo">
+            <ul class="navbar-navegacion">
+                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="#">Prueba Manejo</a></li>
+                <li><a href="./formulario.html">Contacto</a></li>
+            </ul>
+            <ul class="navbar-navegacion">
+                <li><a href="#">Iniciar sesión</a></li>
+                <li><a href="#">Registrarse</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Formulario para contacto</h2>
+    <form id="formulario">
 
         <fieldset class="nombre">
             <label for="nombre">Nombre: </label>
-            <input type="text" id="nombre" name="nombres" placeholder="Nombres" />
-            <input type="text" id="nombre" name="apellidopaterno" placeholder="Apellido Paterno" />
-            <input type="text" id="nombre" name="apellidomaterno" placeholder="Apellido Materno" />
+            <input type="text" id="nombre"  name="nombre" placeholder="Nombres" />
+            <input type="text" id="nombre" class="apellidoP" name="apellidoPaterno" placeholder="Apellido Paterno" />
+            <input type="text" id="nombre"  class="apellidoM" name="apellidoMaterno" placeholder="Apellido Materno" />
         </fieldset>
-
+        <div>
         <label for="mail">Email:</label>
         <input type="email" id="mail" name="mail" placeholder="correo@correo.cl" /><br />
-
-        <label for="motivo">Motivo:</label>
-        <textarea id="motivo" name="motivo" placeholder="Motivo"></textarea><br />
-
+        </div> 
+        <div>   
         <label for="telefono">Teléfono:</label>
-        <input type="text" id="telefono" name="telefono" placeholder="+56987654321"
-            pattern="^\+56(\s?)(0?9)(\s?)[9876543]\d{7}$" /><br />
+        <input type="text" id="telefono" name="telefono" placeholder="56987654321"/><br />
+        </div>
+        <div>    
+        <label for="rut">Rut:</label>
+        <input type="text" id="rut"  name="rut" placeholder="11111111-1">    
+        </div>  
+        <div>  
+        <label for="motivo">Motivo:</label>
+         <textarea id="motivo" name="motivo" placeholder="Motivo"></textarea><br />    
+        </div>    
 
-
-        <button type="submit" id="enviar">Enviar</button>
+        <button type="submit" id="enviar" disabled>Enviar</button>
 
         <br />
     </form>
+</main>
 
 </body>
 
