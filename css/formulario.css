@@ -3,7 +3,7 @@ form {
 }
 
 form label {
-    display: inline-block;
+    display: flex;
     text-align: left;
     width: 30%;
     margin-bottom: 1vw;
@@ -11,6 +11,8 @@ form label {
 
 form fieldset {
     border: white;
+    padding: 0;
+    margin: 0
 }
 
 form input, textarea, select {
@@ -36,6 +38,7 @@ input, textarea, select {
     background-color: rgb(71, 165, 247);
     border: 1.15vw solid rgb(71, 165, 247);
     color: white;
+    opacity: 60%;
 }
 
 body {
