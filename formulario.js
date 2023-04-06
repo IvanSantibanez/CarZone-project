@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function validarRut(rut) {
-        const regex = /^[0-9]+[-|‐]{1}[0-9kK]{1}$/
+        const regex = /^0*(\d{1,3}(\.?\d{3})*)\-?([\dkK])$/
         const resultado = regex.test(rut)
         return resultado
     }
