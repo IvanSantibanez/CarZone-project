@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const inputMotivo = document.querySelector('#motivo');
     const formulario = document.querySelector('#formulario')
     const botonEnviar = document.getElementById('enviar')
+    
 
     // Asignar eventos
     inputNombre.addEventListener('blur', validar)
@@ -29,9 +30,10 @@ document.addEventListener('DOMContentLoaded', function () {
     inputTelefono.addEventListener('blur', validar)
     inputRut.addEventListener('blur', validar)
     inputMotivo.addEventListener('input', validar)
-    formulario.addEventListener('submit', enviarEmail)
+    formulario.addEventListener('submit', enviarForm)
+    inputs.addEventListener('submit',validar)
 
-    function enviarEmail(e) {
+    function enviarForm(e) {
         e.preventDefault()
 
         resetFormulario()
@@ -54,13 +56,15 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function validar(e) {
-        console.log(e.target.parentElement)
+
         if (e.target.value.trim() === '') {
             mostrarAlerta(`El campo ${e.target.id} es obligatorio`, e.target.parentElement);
+            validarBorde(e.target.value)
             form[e.target.name] = ''
             comprobarForm()
             return
         }
+       
         
         if (e.target.id === 'mail' && !validarEmail(e.target.value)) {
             mostrarAlerta('El email no es válido', e.target.parentElement)
@@ -68,12 +72,17 @@ document.addEventListener('DOMContentLoaded', function () {
             comprobarForm()
             return
         }
+      
+
+        
+
         if (e.target.id === 'rut' && !validarRut(e.target.value)) {
             mostrarAlerta('El rut no es válido', e.target.parentElement)
             form[e.target.name] = ''
             comprobarForm()
             return
         }
+     
 
         if (e.target.id === 'telefono' && !validarTelefono(e.target.value)) {
             mostrarAlerta('El número no es válido', e.target.parentElement)
@@ -81,6 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
             comprobarForm()
             return
         }
+     
 
         limpiarAlerta(e.target.parentElement)
 
@@ -114,27 +124,57 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function limpiarAlerta(referencia) {
         // Comprobar si ya existe una alerta
-        const alerta = referencia.querySelector('.alerta')
+         const alerta = referencia.querySelector('.alerta')
+      
+       
+
         if (alerta) {
             alerta.remove()
         }
+
+       
+       
+        
+      
+        
     }
 
     function validarEmail(email) {
         const regex = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/
         const resultado = regex.test(email)
+        if(resultado){
+            document.getElementById('mail').classList.remove('input-incorrecto')
+            document.getElementById('mail').classList.add('input-correcto')
+        } else {
+            document.getElementById('mail').classList.remove('input-correcto')
+            document.getElementById('mail').classList.add('input-incorrecto')
+        } 
         return resultado
     }
 
     function validarRut(rut) {
-        const regex = /^[0-9]+[-|‐]{1}[0-9kK]{1}$/
+        const regex = /^0*(\d{1,3}(\.?\d{3})*)\-?([\dkK])$/
         const resultado = regex.test(rut)
+        if(resultado){
+            document.getElementById('rut').classList.remove('input-incorrecto')
+            document.getElementById('rut').classList.add('input-correcto')
+        } else {
+            document.getElementById('rut').classList.remove('input-correcto')
+            document.getElementById('rut').classList.add('input-incorrecto')
+        } 
         return resultado
     }
 
     function validarTelefono(telefono) {
         const regex = /^(\+?56)?(\s?)(0?9)(\s?)[98765432]\d{7}$/
         const resultado = regex.test(telefono)
+        if(resultado){
+            document.getElementById('telefono').classList.remove('input-incorrecto')
+            document.getElementById('telefono').classList.add('input-correcto')
+        } else {
+            document.getElementById('telefono').classList.remove('input-correcto')
+            document.getElementById('telefono').classList.add('input-incorrecto')
+        } 
         return resultado
     }
 
@@ -166,5 +206,28 @@ document.addEventListener('DOMContentLoaded', function () {
         formulario.reset()
         comprobarForm()
     }
+
+    function validarBorde(e) {
+      
+        if(e.trim() === '' && e.trim() != 'mail'){
+            document.getElementById('mail').classList.remove('input-correcto')
+            document.getElementById('mail').classList.add('input-incorrecto')
+           
+        }
+        if(e.trim() === '' && e.trim() != 'telefono'){
+            document.getElementById('telefono').classList.remove('input-correcto')
+            document.getElementById('telefono').classList.add('input-incorrecto')
+           
+        }if(e.trim() === '' && e.trim() != 'rut'){
+            document.getElementById('rut').classList.remove('input-correcto')
+            document.getElementById('rut').classList.add('input-incorrecto')
+           
+        }
+      
+        
+    }
+    
+
+ 
 
 })
