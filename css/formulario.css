@@ -44,6 +44,12 @@ input, textarea, select {
     border-radius: 5px;
 }
 
+.input-correcto {
+    border: 1px solid green;
+}
+.input-incorrecto {
+    border: 1px solid red;
+}
 #enviar {
     display: center;
     border-radius: 5px;;
