@@ -15,6 +15,7 @@
                 <li><a href="./index.html">Inicio</a></li>
                 <li><a href="#">Prueba Manejo</a></li>
                 <li><a href="./formulario.html">Contacto</a></li>
+                <li><a href="./alerta-seguridad.html">Seguridad</a></li>
             </ul>
             <ul class="navbar-navegacion">
                 <li><a href="#">Iniciar sesión</a></li>
@@ -26,6 +27,48 @@
         <div id="logo-empresa">
             <img src="./assets/logo.png" alt="Imágen logo de automóvil">
         </div>
+        <section id="busqueda">
+            <h3>Tu nuevo auto a un solo paso</h3>
+            <p>Personaliza tu búsqueda para encontrar el auto que deseas de manera más rápida</p>
+            <form id="buscador">
+                <div>
+                    <select name="marca" id="marca">
+                        <option value="#">Marca</option>
+                        <option value="Chevrolet">Chevrolet</option>
+                        <option value="Kia">Kia</option>
+                        <option value="Hyundai">Hyundai</option>
+                    </select>
+                </div>
+                <div>
+                    <select name="color" id="color">
+                        <option value="#">Color</option>
+                        <option value="Plata">Plata</option>
+                        <option value="Azul">Azul</option>
+                        <option value="Blanco">Blanco</option>
+                        <option value="Verde">Verde</option>
+                        <option value="Rojo">Rojo</option>
+                    </select>
+                </div>
+                <div>
+                    <select name="precioMin" id="precioMin">
+                        <option value="#">Precio Mínimo</option>
+                        <option value="7000000">$ 7.000.000</option>
+                        <option value="25000000">$ 25.000.000</option>
+                        <option value="40000000">$ 40.000.000</option>
+                    </select>
+                </div>
+                <div>
+                    <select name="precioMax" id="precioMax">
+                        <option value="#">Precio Máximo</option>
+                        <option value="15000000">$ 15.000.000</option>
+                        <option value="30000000">$ 30.000.000</option>
+                        <option value="70000000">$ 70.000.000</option>
+                    </select>
+                </div>
+                <button id="boton-buscador">Buscar</button>
+            </form>
+
+        </section>
         <section id="galeria-autos" >
             <div class="automovil">
                 <article >
@@ -109,19 +152,95 @@
                 </article>
             </div>
             </section>
-        <section>
-            <form >
-
-            </form>
+        <section id="servicios-section">
+            <div class="servicios">
+                <article>
+                    <img src="https://www.chevrolet.cl/content/dam/chevrolet/south-america/chile/espanol/index/index-subcontent/01-catwalk/catwalk-mantenciones-2000x1000-optimized.jpg?imwidth=420" alt="imagen persona haciendo mantención">
+                    <h4>Mantenciones</h4>
+                    <p>Puedes comprar mantenciones prepagadas a tu auto 0 kilómetros</p>
+                </article>
+            </div>
+            <div class="servicios">
+                <article>
+                    <img src="https://www.chevrolet.cl/content/dam/chevrolet/south-america/chile/espanol/index/index-subcontent/03-images/2023/2018-home-campanas-04.jpg?imwidth=420" alt="imagen persona haciendo mantención">
+                    <h4>Campañas de seguridad</h4>
+                    <p> Verifica aquí si tu auto tiene que ir a revisión</p>
+                </article>
+            </div>
+            <div class="servicios">
+                <article>
+                    <img src="https://www.chevrolet.cl/content/dam/chevrolet/south-america/chile/espanol/index/index-subcontent/01-catwalk/2022/solicita-una-cotizacion.jpg?imwidth=420" alt="imagen persona haciendo mantención">
+                    <h4>Solicita una cotización</h4>
+                    <p>Para que conozcas todo lo que CarZone tiene para ti.</p>
+                </article>
+            </div>
+            <div class="servicios">
+                <article>
+                    <img src="https://www.chevrolet.cl/content/dam/chevrolet/south-america/chile/espanol/index/index-subcontent/01-catwalk/2018-home-financia-03-optimized.jpg?imwidth=420" alt="imagen persona haciendo mantención">
+                    <h4>Financia tu 0KM</h4>
+                    <p>En CarZone Servicios Financieros encuentras planes y beneficios que se adapten atus necesidades.</p>
+                </article>
+            </div>
+            <div class="servicios">
+                <article>
+                    <img src="https://www.chevrolet.cl/content/dam/chevrolet/south-america/chile/espanol/index/index-subcontent/01-catwalk/2022/catwalk-flotas.jpg?imwidth=420" alt="imagen persona haciendo mantención">
+                    <h4>Ventas Corporativas</h4>
+                    <p>Encuentra ventajas para ayudarte a rentabilizar tu empresa.</p>
+                </article>
+            </div>
+            <div class="servicios">
+                <article>
+                    <img src="https://www.chevrolet.cl/content/dam/chevrolet/south-america/chile/espanol/index/index-subcontent/01-catwalk/2019-home-content-02-optimized.jpg?imwidth=420" alt="imagen persona haciendo mantención">
+                    <h4>Tecnología OnStar</h4>
+                    <p>Con OnStar nunca estarás solo, tendrás más seguridad y ayuda en emergencias.</p>
+                </article>
+            </div>
         </section>
     </main>
     <footer id="pie-de-pagina">
-        <img src="./assets/logo.png" alt="">
-        <ul>
-            <li>Avenida Simple #123, Las Condes.</li>
-            <li>+56 251739374</li>
-            <li>ventas@carzone.cl</li>
-        </ul>
+        <!-- <img src="./assets/logo.png" alt=""> -->
+        <div id="footer-nosotros"> 
+            <h3 class="footer-titulo">explorar</h3>
+        <nav>
+            <ul>
+                <li><a href="#">accesorios y repuestos</a> </li>
+                <li><a href="#">Agendar servicio</a></li>
+                <li><a href="#">Autos usados</a></li>
+                <li><a href="#">Seguro automotriz</a></li>
+            </ul>
+        </nav>
+        </div>
+        <div id="footer-empresa">
+            <h3 class="footer-titulo">empresa</h3>
+            <nav>
+                <ul>
+                    <li><a href="#">Sobre nosotros</a></li>
+                    <li><a href="#">Legal</a></li>
+                    <li><a href="#">Embajadores</a></li>
+                    <li><a href="#">Protocolo COVID</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="footer-contacto">
+            <h3 class="footer-titulo">contáctanos</h3>
+            <nav>
+                <ul>
+                    <li><a href="#">Centro de ayuda</a></li>
+                    <li><a href="">Avenida Simple #123, Las Condes</a> </li>
+                    <li><a href="">+56 251739374</a></li>
+                    <li><a href="#">ventas@carzone.cl</a></li>
+                </ul>
+            </nav>
+            <nav id="redes-sociales-footer">
+                <ul>
+                    <li><a href="#"><img src="https://www.brunofritsch.cl/file/general/bf_ig.svg" alt="logo instagram"></a></li>
+                    <li><a href="#"><img src="https://www.brunofritsch.cl/file/general/bf_lk.svg" alt="logo LinkedIn"></a></li>
+                    <li><a href="#"><img src="https://www.brunofritsch.cl/file/general/bf_yt.svg" alt="logo YouTube"></a></li>
+                </ul>
+            </nav>
+        </div>
+       
+        
     </footer>
         
   
