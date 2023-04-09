@@ -1,0 +1,83 @@
+.header-section {
+    height: 500px;
+    width: auto;
+    background-image: url(https://revista.dgt.es/Galerias/educacion-formacion/conducir-mejor/2016/Conducir-Mejor-Preparados-para-conducir.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    display: flex;
+    align-items: center
+}
+
+.header-section h2 {
+    width: 400px;
+    font-weight: 400;
+    font-size: 54px;
+    padding-left: 1rem;
+    
+}
+.header-section strong {
+    color: white;
+    -webkit-text-stroke: 1px black;
+}
+
+#seguridad-consulta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#consulta-form input, #consulta-form button {
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#consulta-form button {
+    background-color: #093867;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#consulta-form button:hover, #agendar-hora:hover{
+    background-color: #9bb2d7;
+}
+
+
+#consulta-form p {
+    color: rgb(155, 158, 161);
+}
+
+#seguridad-info {
+    background-color: #9bb2d7;
+    margin: 100px 0;
+    display: grid;
+    gap: 5rem;
+    grid-template-columns: repeat(auto-fit,minmax(min(100%,20rem),1fr));
+    padding: 30px 0;
+}
+#seguridad-texto, #seguridad-preguntas{
+    margin-left: 5rem;
+}
+#seguridad-video {
+    margin-right: 100px;
+}
+
+
+#agendar-hora {
+    background-color: #093867;
+    box-shadow: 3px 7px 8px rgba(0,0,0,0.4);
+    border-radius: 10px;
+    margin-top: 100px;
+    padding: 20px;
+    align-self: center;
+    cursor: pointer;
+}
+
+#agendar-hora a {
+    text-decoration: none;
+    color: white;
+    
+}
+
