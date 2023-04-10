@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
     inputEmail.addEventListener('blur', validar)
     inputTelefono.addEventListener('blur', validar)
     inputRut.addEventListener('blur', validar)
-    inputMotivo.addEventListener('input', validar)
+    inputMotivo.addEventListener('blur', validar)
     formulario.addEventListener('submit', enviarForm)
     inputs.addEventListener('submit',validar)
 
@@ -55,34 +55,55 @@ document.addEventListener('DOMContentLoaded', function () {
 
     }
 
-    function validar(e) {
+  
 
+    function validar(e) { 
+        
         if (e.target.value.trim() === '') {
             mostrarAlerta(`El campo ${e.target.id} es obligatorio`, e.target.parentElement);
-            validarBorde(e.target.value)
             form[e.target.name] = ''
             comprobarForm()
             return
         }
        
         
-        if (e.target.id === 'mail' && !validarEmail(e.target.value)) {
+        if (e.target.id === 'mail' && !validarEmail(e.target.value) ) {
             mostrarAlerta('El email no es válido', e.target.parentElement)
             form[e.target.name] = ''
             comprobarForm()
             return
         }
       
-
+        var Rut = {
+            // Valida el rut con su cadena completa "XXXXXXXX-X"
+            validaRut : function (rutCompleto) {
+                rutCompleto = rutCompleto.replaceAll(".","");
+                if (!/^[0-9]+[-|‐]{1}[0-9kK]{1}$/.test( rutCompleto ))
+                    return false;
+                var tmp 	= rutCompleto.split('-');
+                var digv	= tmp[1]; 
+                var rut 	= tmp[0];
+                if ( digv == 'K' ) digv = 'k' ;
+                
+                return (Rut.dv(rut) == digv );
+            },
+            dv : function(T){
+                var M=0,S=1;
+                for(;T;T=Math.floor(T/10))
+                    S=(S+T%10*(9-M++%6))%11;
+                return S?S-1:'k';
+            }
+        }
         
-
-        if (e.target.id === 'rut' && !validarRut(e.target.value)) {
+        
+        if (e.target.id === 'rut' && !Rut.validaRut(e.target.value)) {
             mostrarAlerta('El rut no es válido', e.target.parentElement)
+            document.getElementById('rut').classList.add('input-incorrecto')
             form[e.target.name] = ''
             comprobarForm()
             return
         }
-     
+    
 
         if (e.target.id === 'telefono' && !validarTelefono(e.target.value)) {
             mostrarAlerta('El número no es válido', e.target.parentElement)
@@ -110,11 +131,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const error = document.createElement('P')
         error.textContent = mensaje
-        error.style.backgroundColor = 'red'
-        error.style.color = 'white'
-        error.style.textAlign = 'center'
-        error.style.width = '50%'
-        error.style.borderRadius = '10px'
+        error.style.color = 'red'
         error.classList.add('alerta')
 
 
@@ -142,39 +159,17 @@ document.addEventListener('DOMContentLoaded', function () {
     function validarEmail(email) {
         const regex = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/
         const resultado = regex.test(email)
-        if(resultado){
-            document.getElementById('mail').classList.remove('input-incorrecto')
-            document.getElementById('mail').classList.add('input-correcto')
-        } else {
-            document.getElementById('mail').classList.remove('input-correcto')
-            document.getElementById('mail').classList.add('input-incorrecto')
-        } 
+       
         return resultado
     }
-
-    function validarRut(rut) {
-        const regex = /^0*(\d{1,3}(\.?\d{3})*)\-?([\dkK])$/
-        const resultado = regex.test(rut)
-        if(resultado){
-            document.getElementById('rut').classList.remove('input-incorrecto')
-            document.getElementById('rut').classList.add('input-correcto')
-        } else {
-            document.getElementById('rut').classList.remove('input-correcto')
-            document.getElementById('rut').classList.add('input-incorrecto')
-        } 
-        return resultado
-    }
+     
+     
+   
 
     function validarTelefono(telefono) {
         const regex = /^(\+?56)?(\s?)(0?9)(\s?)[98765432]\d{7}$/
         const resultado = regex.test(telefono)
-        if(resultado){
-            document.getElementById('telefono').classList.remove('input-incorrecto')
-            document.getElementById('telefono').classList.add('input-correcto')
-        } else {
-            document.getElementById('telefono').classList.remove('input-correcto')
-            document.getElementById('telefono').classList.add('input-incorrecto')
-        } 
+      
         return resultado
     }
 
@@ -207,25 +202,7 @@ document.addEventListener('DOMContentLoaded', function () {
         comprobarForm()
     }
 
-    function validarBorde(e) {
-      
-        if(e.trim() === '' && e.trim() != 'mail'){
-            document.getElementById('mail').classList.remove('input-correcto')
-            document.getElementById('mail').classList.add('input-incorrecto')
-           
-        }
-        if(e.trim() === '' && e.trim() != 'telefono'){
-            document.getElementById('telefono').classList.remove('input-correcto')
-            document.getElementById('telefono').classList.add('input-incorrecto')
-           
-        }if(e.trim() === '' && e.trim() != 'rut'){
-            document.getElementById('rut').classList.remove('input-correcto')
-            document.getElementById('rut').classList.add('input-incorrecto')
-           
-        }
-      
-        
-    }
+   
     
 
  
