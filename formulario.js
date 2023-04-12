@@ -1,44 +1,41 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     const form = {
-        nombre: '',
-        apellidoPaterno: '',
-        apellidoMaterno: '',
+        nombres: '',
+        apellidos: '',
         mail: '',
         telefono: '',
         rut: '',
-        motivo: '',
+        motivo: ''
     }
 
     //Sleccionamos los elementos
-    const inputNombre = document.querySelector('#nombre');
-    const inputApellidoP = document.querySelector('.apellidoP');
-    const inputApellidoM = document.querySelector('.apellidoM');
+    const inputNombres = document.querySelector('#nombres');
+    const inputApellidos = document.querySelector('.apellidos');
     const inputEmail = document.querySelector('#mail');
     const inputTelefono = document.querySelector('#telefono');
     const inputRut = document.querySelector('#rut');
     const inputMotivo = document.querySelector('#motivo');
     const formulario = document.querySelector('#formulario')
-    const botonEnviar = document.getElementById('enviar')
+    const botonEnviar = document.getElementById('btnEnviar')
     
 
     // Asignar eventos
-    inputNombre.addEventListener('blur', validar)
-    inputApellidoP.addEventListener('blur', validar)
-    inputApellidoM.addEventListener('blur', validar)
+    inputNombres.addEventListener('blur', validar)
+    inputApellidos.addEventListener('blur', validar)
     inputEmail.addEventListener('blur', validar)
     inputTelefono.addEventListener('blur', validar)
     inputRut.addEventListener('blur', validar)
     inputMotivo.addEventListener('blur', validar)
     formulario.addEventListener('submit', enviarForm)
-    inputs.addEventListener('submit',validar)
+  
 
     function enviarForm(e) {
         e.preventDefault()
 
         resetFormulario()
         // Crear alerta
-        const alertaExito = document.createElement('P')
+        const alertaExito = document.createElement('SPAN')
         alertaExito.textContent = 'Mensaje enviado correctamente'
         alertaExito.style.backgroundColor = 'green'
         alertaExito.style.color = 'white'
@@ -61,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
         
         if (e.target.value.trim() === '') {
             mostrarAlerta(`El campo ${e.target.id} es obligatorio`, e.target.parentElement);
+            console.log(e.target.parentElement)
             form[e.target.name] = ''
             comprobarForm()
             return
@@ -129,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-        const error = document.createElement('P')
+        const error = document.createElement('SPAN')
         error.textContent = mensaje
         error.style.color = 'red'
         error.classList.add('alerta')
@@ -148,12 +146,6 @@ document.addEventListener('DOMContentLoaded', function () {
         if (alerta) {
             alerta.remove()
         }
-
-       
-       
-        
-      
-        
     }
 
     function validarEmail(email) {
@@ -190,12 +182,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function resetFormulario() {
-        form.nombre = ''
-        form.apellidoPaterno = ''
-        form.apellidoMaterno = ''
-        form.mail = ''
-        form.telefono = ''
-        form.rut = ''
+        form.nombres = '',
+        form.apellidos = '',
+        form.mail = '',
+        form.telefono = '',
+        form.rut = '',
         form.motivo = ''
 
         formulario.reset()
