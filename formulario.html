@@ -9,15 +9,15 @@
     <link rel="stylesheet" href="./css/formulario.css" />
     <link rel="stylesheet" href="./css/estilo.css">
     <script src="./formulario.js" defer></script>
-    
+
 </head>
 
-<!-- Formulario de interés del usuario -->
+<!-- Formulario de contacto -->
 
 <body>
     <header>
         <nav id="navbar">
-            <img src="./assets/logo.png"  alt="Imagen logo de automóvil" id="navbar-logo">
+            <img src="./assets/logo.png" alt="Imagen logo de automóvil" id="navbar-logo">
             <ul class="navbar-navegacion">
                 <li><a href="./index.html">Inicio</a></li>
                 <li><a href="#">Prueba Manejo</a></li>
@@ -33,87 +33,87 @@
     <main>
         <section id="texto-form">
             <h2>Formulario para contacto</h2>
-            <p>Porque queremos escucharte, ingresa tus datos en el siguiente formulario y nos contactaremos contigo para resolver tus inquietudes.</p>
+            <p>Porque queremos escucharte, ingresa tus datos en el siguiente formulario y nos contactaremos contigo para
+                resolver tus inquietudes.</p>
             <p>Nuestro compromiso es contactarte en 24 horas hábiles y resolver tu inquietud en 5 días hábiles.</p>
         </section>
         <section id="form">
-       
+
             <form id="formulario">
 
-                <fieldset class="nombre">
-                    <label for="nombre">Nombre: </label>
-                    <input type="text" id="nombre"  name="nombre" placeholder="Nombres" />
-                    <input type="text" id="nombre" class="apellidoP" name="apellidoPaterno" placeholder="Apellido Paterno" />
-                    <input type="text" id="nombre"  class="apellidoM" name="apellidoMaterno" placeholder="Apellido Materno" />
-                </fieldset>
-                <div>
+
+                <label for="nombres">Nombres: </label>
+                <input type="text" id="nombres" name="nombres" placeholder="Nombres" />
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" id="apellidos" class="apellidos" name="apellido" placeholder="Apellidos" />
+
+
                 <label for="mail">Email:</label>
                 <input type="email" id="mail" name="mail" placeholder="correo@correo.cl" /><br />
-                </div> 
-                <div>   
+
                 <label for="telefono">Teléfono:</label>
-                <input type="text" id="telefono" name="telefono" placeholder="56987654321"/><br />
-                </div>
-                <div>    
+                <input type="text" id="telefono" name="telefono" placeholder="56987654321" /><br />
+
                 <label for="rut">Rut:</label>
-                <input type="text" id="rut"  name="rut" placeholder="11111111-1">    
-                </div>  
-                <div>  
+                <input type="text" id="rut" name="rut" placeholder="11111111-1">
+
                 <label for="motivo">Motivo:</label>
-                <textarea id="motivo" name="motivo" placeholder="Motivo"></textarea><br />   
-                </div>    
+                <textarea id="motivo" name="motivo" placeholder="Motivo"></textarea><br />
 
                 <button type="submit" id="enviar" disabled>Enviar</button>
 
                 <br />
             </form>
-        </section>    
-</main>
-<footer id="pie-de-pagina">
-    <!-- <img src="./assets/logo.png" alt=""> -->
-    <div id="footer-nosotros"> 
-        <h3 class="footer-titulo">explorar</h3>
-    <nav>
-        <ul>
-            <li><a href="#">accesorios y repuestos</a> </li>
-            <li><a href="#">Agendar servicio</a></li>
-            <li><a href="#">Autos usados</a></li>
-            <li><a href="#">Seguro automotriz</a></li>
-        </ul>
-    </nav>
-    </div>
-    <div id="footer-empresa">
-        <h3 class="footer-titulo">empresa</h3>
-        <nav>
-            <ul>
-                <li><a href="#">Sobre nosotros</a></li>
-                <li><a href="#">Legal</a></li>
-                <li><a href="#">Embajadores</a></li>
-                <li><a href="#">Protocolo COVID</a></li>
-            </ul>
-        </nav>
-    </div>
-    <div id="footer-contacto">
-        <h3 class="footer-titulo">contáctanos</h3>
-        <nav>
-            <ul>
-                <li><a href="#">Centro de ayuda</a></li>
-                <li><a href="">Avenida Simple #123, Las Condes</a> </li>
-                <li><a href="">+56 251739374</a></li>
-                <li><a href="#">ventas@carzone.cl</a></li>
-            </ul>
-        </nav>
-        <nav id="redes-sociales-footer">
-            <ul>
-                <li><a href="#"><img src="https://www.brunofritsch.cl/file/general/bf_ig.svg" alt="logo instagram"></a></li>
-                <li><a href="#"><img src="https://www.brunofritsch.cl/file/general/bf_lk.svg" alt="logo LinkedIn"></a></li>
-                <li><a href="#"><img src="https://www.brunofritsch.cl/file/general/bf_yt.svg" alt="logo YouTube"></a></li>
-            </ul>
-        </nav>
-    </div>
-   
-    
-</footer>
+        </section>
+    </main>
+    <footer id="pie-de-pagina">
+        <!-- <img src="./assets/logo.png" alt=""> -->
+        <div id="footer-nosotros">
+            <h3 class="footer-titulo">explorar</h3>
+            <nav>
+                <ul>
+                    <li><a href="#">Accesorios y repuestos</a> </li>
+                    <li><a href="#">Agendar servicio</a></li>
+                    <li><a href="#">Autos usados</a></li>
+                    <li><a href="#">Seguro automotriz</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="footer-empresa">
+            <h3 class="footer-titulo">empresa</h3>
+            <nav>
+                <ul>
+                    <li><a href="#">Sobre nosotros</a></li>
+                    <li><a href="#">Legal</a></li>
+                    <li><a href="#">Embajadores</a></li>
+                    <li><a href="#">Protocolo COVID</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="footer-contacto">
+            <h3 class="footer-titulo">contáctanos</h3>
+            <nav>
+                <ul>
+                    <li><a href="#">Centro de ayuda</a></li>
+                    <li><a href="">Avenida Simple #123, Las Condes</a> </li>
+                    <li><a href="">+56 251739374</a></li>
+                    <li><a href="#">ventas@carzone.cl</a></li>
+                </ul>
+            </nav>
+            <nav id="redes-sociales-footer">
+                <ul>
+                    <li><a href="#"><img src="https://www.brunofritsch.cl/file/general/bf_ig.svg"
+                                alt="logo instagram"></a></li>
+                    <li><a href="#"><img src="https://www.brunofritsch.cl/file/general/bf_lk.svg"
+                                alt="logo LinkedIn"></a></li>
+                    <li><a href="#"><img src="https://www.brunofritsch.cl/file/general/bf_yt.svg"
+                                alt="logo YouTube"></a></li>
+                </ul>
+            </nav>
+        </div>
+
+
+    </footer>
 </body>
 
 </html>
